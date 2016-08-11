@@ -1,6 +1,5 @@
 <?php
-require 'autoloader.php';
-
+require 'GeneralController.php';
 new GeneralController();
 ?>
 <!DOCTYPE html>
