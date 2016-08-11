@@ -4,7 +4,7 @@ Study on the two design patterns and the frameworks that implement
 
 ## Motivation
 
-Curiosity and improving my development mode
+Curiosity and improve my development mode
 
 ## Tests
 
