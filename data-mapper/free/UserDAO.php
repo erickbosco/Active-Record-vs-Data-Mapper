@@ -6,7 +6,7 @@
  * @author Erick Bosco
  */
 
-class UserMapper {
+class UserDAO {
     
     protected $db;
     
