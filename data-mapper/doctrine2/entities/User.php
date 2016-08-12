@@ -24,21 +24,21 @@ class User {
      */
     private $password;
 	
-	public function getId() {
+    public function getId() {
         return $this->id;
     }
     public function setId($username) {
         $this->id = $id;
     }
 	
-	public function getUsername() {
+    public function getUsername() {
         return $this->username;
     }
     public function setUsername($username) {
         $this->username = $username;
     }
 	
-	public function getPassword() {
+    public function getPassword() {
         return $this->password;
     }
     public function setPassword($password) {
