@@ -30,20 +30,8 @@ class GeneralController {
         });*/
         
         /* doctrine 2 */
-        $paths = array('path/entities');
-        $isDevMode = true;
-
-        // the connection configuration
-        $dbParams = array(
-            'driver'   => 'pdo_mysql',
-            'user'     => 'root',
-            'password' => '',
-            'dbname'   => 'test',
-        );
-        
-        $config = Setup::createAnnotationMetadataConfiguration($paths, $isDevMode);
-        $this->entityManager = EntityManager::create($dbParams, $config);
-        
+        require_once "./data-mapper/doctrine2/bootstrap.php";
+        $this->entityManager = $entityManager;
         
         
         if (isset($_GET['action']) && method_exists($this, $_GET["action"])) {
@@ -99,8 +87,15 @@ class GeneralController {
     }
 
     private function dataMapperDoctrine() {
-        $user = $this->entityManager->find('User', 1);
-        var_dump($user);
+        require './data-mapper/doctrine2/entities/User.php';
+        $user = new User();
+        $user->setUsername('usernamea');
+        $user->setPassword('pass1');
+
+        $this->entityManager->persist($user);
+        $this->entityManager->flush();
+
+        echo "Created User with ID " . $user->getId() . "\n";
     }
 
 }
